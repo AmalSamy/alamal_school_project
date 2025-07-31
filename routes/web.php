@@ -25,6 +25,7 @@ Route::prefix('learnschool/')->group(function () {
     Route::prefix('dashboard/')->name('dash.')->group(function () {
         Route::prefix('grades/')->controller(StageController::class)->name('grade.')->group(function () {
             Route::get('/', 'index')->name('index');
+            Route::get('/getdata', 'getdata')->name('getdata');
             Route::get('/create', 'create')->name('create');
             Route::post('/add', 'add')->name('add');
         });

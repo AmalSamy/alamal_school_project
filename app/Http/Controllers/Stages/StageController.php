@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Grade;
 use App\Models\Stage;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class StageController extends Controller
 {
@@ -17,6 +18,12 @@ class StageController extends Controller
         $stages = Stage::all();
         return view('dashboard.grades.create',compact('stages'));
     }
+
+    function getdata(Request $request){
+        $grades = Grade::query();
+        return DataTables::of($grades)->addIndexColumn()->make(true);
+    }
+
     function add(Request $request){
         $request->validate([
             'name'=>'required|unique:grades,name',
