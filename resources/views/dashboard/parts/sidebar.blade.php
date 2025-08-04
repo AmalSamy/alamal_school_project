@@ -43,7 +43,6 @@
               <ul>
                 <li> <a href="{{ route('dash.grade.index') }}"><i class="bi bi-circle"></i>جميع المستويات</a>
                 </li>
-                <li> <a href="{{ route('dash.grade.create') }}"><i class="bi bi-circle"></i>اضافة مستوى جديد</a>
                 </li>
               </ul>
             </li>

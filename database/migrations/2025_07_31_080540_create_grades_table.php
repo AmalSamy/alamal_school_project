@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('tag')->unique();
+
             $table->foreignId('stage_id')->constrained('stages')->cascadeOnDelete();
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

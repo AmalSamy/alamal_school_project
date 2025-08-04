@@ -17,7 +17,8 @@
   <link href="{{asset('dashboard/assets/css/icons.css')}}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+   <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css">
+   <link rel="stylesheet" href="{{ asset('dashboard/toastr/toastr/app-assets/vendors/css/extensions/toastr.min.css') }}">
 
   <!-- loader-->
 	<link href="{{asset('dashboard/assets/css/pace.min.css')}}" rel="stylesheet" />
@@ -572,6 +573,8 @@
   <!--app-->
   <script src="{{asset('dashboard/assets/js/app.js')}}"></script>
   <script src="{{asset('dashboard/assets/js/index.js')}}"></script>
+  <script src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
+  <script src="{{ asset('dashboard/toastr/toastr/app-assets/vendors/js/extensions/toastr.min.js') }}"></script>
 
 
 @yield('js')

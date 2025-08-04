@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Stages\StageController;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,11 +25,16 @@ Route::get('/', function () {
 //name : dash.
 Route::prefix('learnschool/')->group(function () {
     Route::prefix('dashboard/')->name('dash.')->group(function () {
-        Route::prefix('grades/')->controller(StageController::class)->name('grade.')->group(function () {
+        Route::prefix('grades/')->controller(GradeController::class)->name('grade.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/getdata', 'getdata')->name('getdata');
+            Route::get('/getactive', 'getactive')->name('getactive');
+            Route::get('/getactivesection', 'getactivesection')->name('getactive.section');
+            Route::get('/getactivestage', 'getactivestage')->name('getactive.stage');
             Route::get('/create', 'create')->name('create');
             Route::post('/add', 'add')->name('add');
+            Route::post('/changemaster', 'changemaster')->name('changemaster');
+            Route::post('/addsection', 'addsection')->name('addsection');
         });
     });
 });
@@ -42,4 +49,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
